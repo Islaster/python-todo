@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Task Completed?</h1>
+
+<h4><span class="teal-text">Did you {{ object.name }}</span>?</h4>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="complete" />
+</form>
+<br />
+<a href="{% url 'detail' todo.id %}">Cancel</a>
+{% endblock %}

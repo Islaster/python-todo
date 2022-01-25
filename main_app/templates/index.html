@@ -1,0 +1,16 @@
+{% extends 'base.html'%} {%block content%}
+<h1>Todo List</h1>
+<hr />
+{%if todos.count%}
+<ul>
+  {%for todo in todos%}
+  <li>
+    <a href="todo/{{todo.id}}">{{ todo }}</a>
+    <a href="{%url 'todo_delete' todo.id%}">Task complete</a>
+  </li>
+
+  {% endfor %}
+</ul>
+{%else%}
+<h3>You are all caught up</h3>
+{%endif%} {%endblock%}
